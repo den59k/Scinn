@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Наука и инновации</title>
-	<link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-<body>
-	<div id = 'hat'>
+<div id = 'hat'>
 		<img src = "logo.png" id = 'logo'/>
 		<img src = "nauka.png" id = 'nauka'/>
 		<a href = "http://pstu.ru" target="_blank"><img src = "PSTU.png" id = "PSTU"/></a>
@@ -46,86 +38,15 @@
 		 class = 'panelButton' target="_blank">Проректор по науке и инновациям</a>
 		<a href = "http://pstu.ru/activity/innovation/sovet/"
 		 class = 'panelButton' target="_blank">Совет по науке и инновациям</a>
-		<div class = 'panelButton' onclick='openDrop("NIcontrol")'>Управление науки и инновации<img src = "Arrow.png"/></div>
-		<div class = 'panelButton' onclick='openDrop("NIpart")'>Научно-исследовательская часть<img src = "Arrow.png"/></div>
-		<div class = 'panelButton' onclick='openDrop("society")'>Общественные площадки<img src = "Arrow.png"/></div>
+		<div class = 'panelButton' onclick='openDrop("NIcontrol", this)'>Управление науки и инновации<img src = "Arrow.png"/></div>
+		<div class = 'panelButton' onclick='openDrop("NIpart", this)'>Научно-исследовательская часть<img src = "Arrow.png"/></div>
+		<div class = 'panelButton' onclick='openDrop("society", this)'>Общественные площадки<img src = "Arrow.png"/></div>
 		<a href = "http://pstu.ru/title1/departments/manage_department/aspirant/"
 		 class = 'panelButton' target="_blank">Управление подготовки кадров высшей квалификации</a>
-		<div class = 'panelButton' onclick='openDrop("NIunits")'>Научные образовательные подразделения
+		<div class = 'panelButton' onclick='openDrop("NIunits", this)'>Научные образовательные подразделения
 		<img src = "Arrow.png"/></div>
 		 <a href = "http://pstu.ru/activity/innovation/comps/"
 		 class = 'panelButton' target="_blank">Малые инновационные предприятия</a>
 		<div id = 'panelEnd'/>
 		</div>
 	</div>
-
-	<div id = "mainInfo">
-		<h1>Наука и инновации</h1>
-		<p>Предварительный вариант внешнего вида сайта + интерактивное меню</p>
-	</div>
-
-
-	<script type="text/javascript">
-		function animate(draw, end, duration) {
-		  var start = performance.now();
-		  requestAnimationFrame(function animate(time) {
-		    var timePassed = time - start;
-		    if (timePassed > duration){
-		    	timePassed = duration;
-		    	draw(timePassed/duration);
-		    	end(); }
-		    else
-		    	draw(timePassed/duration);
-		    if (timePassed < duration)  requestAnimationFrame(animate);
-		  });
-		}
-		var nowP;
-		function openDrop(op){
-			if(op){
-			var panel = document.getElementById(op);
-			panel.hidden = false;
-			if(nowP != panel){
-				var mas = panel.children;
-				panel.style.left = '250px';
-				panel.style.opacity = '0';
-				if(nowP)
-					nowP.style.zIndex = -1;
-				panel.style.zIndex = 0;
-				animate(function(time){
-					time = Math.sqrt(time);
-					if(nowP){
-						nowP.style.left = 290-time*50+'px';
-						nowP.style.opacity = 1-time;
-					}
-					/*
-					for(var i = mas.length-1; i >= 0; i--){
-						var t = time+i*0.2;
-						if(t > 1)
-							t = 1;
-						mas[i].style.right = 200-t*200+'px';
-					}*/
-					panel.style.left = 250+time*40+'px';
-					panel.style.opacity = time;
-				}, function(){
-					if(nowP)
-						nowP.hidden = true;
-					nowP = panel;
-				}, 300);
-			}else{
-				animate(function(time){
-					time = Math.sqrt(time);
-					nowP.style.left = 290-time*50+'px';
-					nowP.style.opacity = 1-time;
-				}, function(){
-					nowP.hidden = true;
-					nowP = null;
-				}, 300);
-			}
-		}else
-			alert("Кнопка пока еще не работает!");
-		}
-
-	</script>
-
-</body>
-</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ректорат</title>
+	<link rel="stylesheet" type="text/css" href="../style.css" >
+</head>
+<body>
+
+	<!--ШАПКА И МЕНЮ -->
+
+	<div id = 'hat'>
+		<a href = "../main/index.html"><img src = "../logo.png" id = 'logo'/></a>
+		<a href = "../main/index.html"><img src = "../nauka.png" id = 'nauka'/></a>
+		<a href = "http://pstu.ru" target="_blank"><img src = "../PSTU.png" id = "PSTU"/></a>
+	</div>
+
+	<div class = 'drop' id = 'NIcontrol' hidden='true'>
+		<a href = ''>Отдел планирования и организации исследований и разработок</a>
+		<a href = ''>Отдел коммерциализации разработок</a>
+		<a href = ''>Отдел развития инновационной инфраструктуры и метрологии</a>
+		<a href = ''>Отдел развития научно-исследовательской работы студентов</a>
+		<a href = ''>Отдел ученых степеней и ученых званий</a>
+		<a href = ''>Центр научных публикаций</a>
+	</div>
+
+	<div class = 'drop' id = 'NIpart' hidden='true'>
+		<a href = ''>Научные центры и лаборатории</a>
+		<a href = ''>Центры коллективного пользования (ЦКП)</a>
+		<a href = ''>Уникальные научные установки (УНУ)</a>
+	</div>
+
+	<div class = 'drop' id = 'society' hidden='true'>
+		<a href = ''>Инновационный кластер студенческих проектных групп</a>
+		<a href = ''>Предпринимательская среда</a>
+		<a href = ''>Студенческий совет</a>
+		<a href = ''>Совет молодых ученых и специалистов ПНИПУ</a>
+	</div>
+
+	<div class = 'drop' id = 'NIunits' hidden='true'>
+		<a href = ''>Кафедры</a>
+		<a href = ''>Факультеты</a>
+		<a href = ''>НОЦ</a>
+		<a href = ''>Институты</a>
+	</div>
+
+	<div id = 'panel'>
+		<a href = "http://pstu.ru/manage/rectorat/?cid=105"
+		 class = 'panelButton' target="_blank">Проректор по науке и инновациям</a>
+		<a href = "http://pstu.ru/activity/innovation/sovet/"
+		 class = 'panelButton' target="_blank">Совет по науке и инновациям</a>
+		<div class = 'panelButton' onclick='openDrop("NIcontrol", this)'>Управление науки и инновации<img src = "../Arrow.png"/></div>
+		<div class = 'panelButton' onclick='openDrop("NIpart", this)'>Научно-исследовательская часть<img src = "../Arrow.png"/></div>
+		<div class = 'panelButton' onclick='openDrop("society", this)'>Общественные площадки<img src = "../Arrow.png"/></div>
+		<a href = "http://pstu.ru/title1/departments/manage_department/aspirant/"
+		 class = 'panelButton' target="_blank">Управление подготовки кадров высшей квалификации</a>
+		<div class = 'panelButton' onclick='openDrop("NIunits", this)'>Научные образовательные подразделения
+		<img src = "../Arrow.png"/></div>
+		 <a href = "http://pstu.ru/activity/innovation/comps/"
+		 class = 'panelButton' target="_blank">Малые инновационные предприятия</a>
+		<div id = 'panelEnd'/>
+		</div>
+	</div>
+	<script  type="text/javascript" src="../menuLeft.js"></script>
+	<!--ШАПКА И МЕНЮ -->
+
+
+	<div id = "mainInfo">
+		<h1>Ректорат</h1>
+		<div class = "person">
+			<img src = "105img.jpg"/>
+			<h2>Коротаев Владимир Николаевич</h2>
+			<br/>
+			<p>Проректор по науке и инновациям, профессор, Доктор технических наук</p>	
+		</div>
+		<p>Предварительный вариант внешнего вида сайта + интерактивное меню</p>
+		<p>Еще абзац</p>
+	</div>
+
+</body>
+</html>
