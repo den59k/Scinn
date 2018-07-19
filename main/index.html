@@ -66,10 +66,178 @@
 
 
 	<div id = "mainInfo">
-		<h1>Наука и инновации</h1><br/>
-		<p>Предварительный вариант внешнего вида сайта + интерактивное меню</p>
-		<p>Еще абзац</p>
-	</div>
+		<h1>Наука и инновации в пермском Политехе</h1><br/>
+		<div id = "slideShow">
+			<img src = "Labs/Lab1.jpg" id = "imageLabs"/>
+			<div id = "cropImg" hidden="true">
+				<img src = "Labs/Lab2.jpg" id = "imageLabsTwo" />
+			</div>
+			<div id = "gradientR" hidden="true"></div>
+			<div id = "gradientL" hidden="true"></div>
+			<div id = "ArrowR" onclick="change(true)"></div>
+			<div id = "ArrowL" onclick="change(false)"></div>
+		</div>
+		<p id = "nameLab"><i></i></p>
+		<br/>
+		<h1>Статистика</h1><br/>
+		<div id = "statistika" class = "image">
+			<div class = "stats">
+					<img src = "Statistika/Meropriyatiye.png"/>
+					<p>80+ научных мероприятий</p>
+			</div>
+			<div class = "stats">
+					<img src = "Statistika/Podrazdel.png"/>
+					<p>250 учебно-научных подразделений</p>
+			</div>
+			<div class = "stats">
+					<img src = "Statistika/NauchnUstanovka.png"/>
+					<p>11 уникальных научных установок</p>
+			</div>
+			<div class = "stats">
+					<img src = "Statistika/Rubl.png"/>
+					<p>1 242,8 млн.руб объем НИОКТР и НТУ</p>
+			</div>
+		</div>
+		<br/>
 
+		<h1>Дорожная карта студента</h1><br/>
+		<div id = "studentRoad">
+			<img src = "map.png" style = "width: 100%"/>
+			<a href = "http://pstu.ru/activity/innovation/roadmap/engineer/choice/"
+			 class = "road" style="top:3.5%; left:7.2%;" target="_blank"></a>
+			<a href = "http://pstu.ru/activity/innovation/roadmap/scientist/study/"
+			 class = "road" style="top:39.6%; left:7.2%;" target="_blank"></a>
+			<a href = "http://pstu.ru/activity/innovation/roadmap/businessman/believe/"
+			 class = "road" style="top:76.8%; left:7.4%;" target="_blank"></a>
+			<a href = "http://pstu.ru/activity/innovation/roadmap/engineer/improve/"
+			 class = "road" style="top:3.5%; left:37%;" target="_blank"></a>
+			<a href = "http://pstu.ru/activity/innovation/roadmap/scientist/think_up/"
+			 class = "road" style="top:39.6%; left:37.2%;" target="_blank"></a>
+			<a href = "http://pstu.ru/activity/innovation/roadmap/engineer/practise/"
+			 class = "road" style="top:3.5%; left:62.1%;" target="_blank"></a>
+			<a href = "http://pstu.ru/activity/innovation/roadmap/scientist/declare/"
+			 class = "road" style="top:39.6%; left:62.1%;" target="_blank"></a>
+			<a href = "http://pstu.ru/activity/innovation/roadmap/engineer/work/"
+			 class = "road" style="top:3.5%; left:86.5%;" target="_blank"></a>
+			<a href = "http://pstu.ru/activity/innovation/roadmap/scientist/science/"
+			 class = "road" style="top:39.6%; left:86.5%;" target="_blank"></a>
+			 <a href = "http://pstu.ru/activity/innovation/roadmap/businessman/think_up/"
+			 class = "road" style="top:76.8%; left:34.3%;" target="_blank"></a>
+			 <a href = "http://pstu.ru/activity/innovation/roadmap/businessman/check/"
+			 class = "road" style="top:76.8%; left:47.1%;" target="_blank"></a>
+			 <a href = "http://pstu.ru/activity/innovation/roadmap/businessman/competitions/"
+			 class = "road" style="top:76.8%; left:60.2%;" target="_blank"></a>
+			 <a href = "http://pstu.ru/activity/innovation/roadmap/businessman/money/"
+			 class = "road" style="top:76.8%; left:73.3%;" target="_blank"></a>
+			  <a href = "http://pstu.ru/activity/innovation/roadmap/businessman/business/"
+			 class = "road" style="top:76.8%; left:86.6%;" target="_blank"></a>
+		</div>
+		<br/><br/>
+		<h1>ПНИПУ – центр инновационного развития</h1>
+		<br/>
+		<img src = "image1.png" class = "image"/>
+		<br/>
+		<h1>Программа повышения конкурентоспособности ПНИПУ на 2016-2025 гг</h1>
+		<br/>
+		<img src = "image2.png" class = "image" style = "max-width: 500px"/>
+		<br/><br/>
+		<h1>ИАС "Наука"</h1>
+<p>Для управления научно-исследовательскими работами сотрудников в ПНИПУ используется информационно-аналитическая система «Наука». ИАС "Наука" является интегрированной информационной системой для автоматизированного управления научной деятельностью сотрудников университета с помощью которой решаются следующие задачи:<br/>
+<br/>
+- повышение информационной обеспеченности вуза;<br/>
+<br/>
+- оперативность предоставления информации по результатам научной деятельности;<br/>
+<br/>
+- формирование механизма оценки научной результативности.
+	</p>
+	<br/><br/>
+	<h1>Наши партнеры</h1>
+	<br/>
+	<img src = "sponsors.png" class = "image"/>
+	</div>
+	<script type="text/javascript">
+		function animate(draw, end, duration) {
+			  var start = performance.now();
+			  requestAnimationFrame(function animate(time) {
+			    var timePassed = time - start;
+			    if(timePassed < 0)timePassed=0;
+			    if (timePassed > duration){
+			    	end(); }
+			    else{
+			    	draw(timePassed/duration);
+			 		requestAnimationFrame(animate);
+				}
+			  });
+			}
+		var nowLab = 1;
+		const maxLab = 5;
+		var sli = false;
+		const labNames = ['',
+							'',
+							'',
+							'',
+							''];
+
+
+
+		function sets(timeFraction){
+			//return Math.sin(timeFraction*Math.PI/2);
+			return (1-Math.cos(timeFraction*Math.PI))/2;
+		}
+		var timerId = setTimeout(change, 5000);
+		function change(inRight){
+			 if (inRight === undefined) {
+    			inRight = true;
+  			}
+			clearTimeout(timerId);
+			if(!sli){
+			sli = true;
+			var base = document.getElementById("imageLabs");
+			var baseTwo = document.getElementById("imageLabsTwo");
+			var gradient = document.getElementById((inRight?("gradientR"):("gradientL")));
+			var label = document.getElementById("nameLab");
+			gradient.hidden = false;
+			if(inRight){
+				nowLab++;
+				if(nowLab>maxLab)nowLab=1;
+			}else{
+				nowLab--;
+				if(nowLab<1)nowLab=maxLab;
+			}
+			baseTwo.src = "Labs/Lab"+nowLab+".jpg";
+			baseTwo.parentElement.hidden = false;
+			let a = false;
+			animate(function(time){
+				time = sets(time);
+				if(time < 0.5)
+					label.style.opacity = 1-time*2;
+				else
+					label.style.opacity = time*2-1;
+				if(time > 0.5 && !a){
+					a = true;
+					label.innerHTML = labNames[nowLab-1];
+				}
+				if(inRight){
+					baseTwo.style.left = -100+time*100+"%";
+					baseTwo.parentElement.style.left = 100-time*100+"%";
+					gradient.style.left = 90-time*100+"%";
+				}else{
+					baseTwo.style.left = 100-time*100+"%";
+					baseTwo.parentElement.style.left = -100+time*100+"%";
+					gradient.style.left = -10+time*100+"%";
+				}
+				gradient.style.opacity = (time < 0.8)? ((time < 0.2)?(time*5):1) : (1-(time-0.8)*5);
+			}, function(){
+				gradient.hidden = true;
+				baseTwo.parentElement.hidden = true;
+				base.src = "Labs/Lab"+nowLab+".jpg";
+				sli = false;
+				timerId = setTimeout(change, 5000);
+			}, 1500);
+			}
+		}
+
+
+	</script>
 </body>
 </html>
