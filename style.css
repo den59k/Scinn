@@ -4,6 +4,12 @@
 	}
 }
 
+@media (min-width:1500px){
+	#mainInfo{
+		margin: 10px 100px 10px 300px !important;
+	}
+}
+
 @font-face {
     font-family: Open Sans; /* Гарнитура шрифта */
     src: local('Open Sans'),
@@ -37,7 +43,7 @@ body{
 	background-color: #2A4F7A;
 	padding: 0;
 	width:290px;
-	height: 590px;
+	height: 690px;
 	overflow: hidden;
 	position: absolute;
 	z-index: 5;
@@ -89,6 +95,7 @@ div.drop a:hover{
 	bottom: 0;
 	height: 150px;
 	width: 100%;
+	z-index: -1;
 }
 
 #logo{
@@ -125,10 +132,11 @@ div.drop{
 }
 
 #NIcontrol{top:210px;}
-#NIpart{top:265px;}
-#society{top:320px;}
-#NIunits{top:265px;}
-
+#NIpart{top:320px;}
+#NIscience{top:265px;}
+#society{top:430px;}
+#NIunits{top:485px;}
+#NIinnovation{top:375px;}
 
 
 div.drop a{
@@ -138,7 +146,12 @@ div.drop a{
 
 #mainInfo{
 	margin: 10px 10px 10px 300px;
-	height:500px;
+}
+
+#centerInfo{
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 h1, h2{
@@ -243,6 +256,7 @@ p{
 	position: relative;
 	min-width: 500px;
 	margin-bottom: 20px;
+	margin-top:40px;
 }
 .stats{
 	display: inline-block;

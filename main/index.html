@@ -23,6 +23,16 @@
 		<a href = ''>Отдел ученых степеней и ученых званий</a>
 		<a href = ''>Центр научных публикаций</a>
 	</div>
+	<div class = 'drop' id = 'NIscience' hidden='true'>
+		<a href = ''>Программы, конкурсы, гранты</a>
+		<a href = ''>Технологические платформы</a>
+		<a href = ''>Конференции</a>
+		<a href = ''>Научные журналы</a>
+		<a href = ''>Инновации в образовательных программах</a>
+		<a href = ''>Инновационные проекты</a>
+		<a href = ''>Научные направления</a>
+		<a href = ''>Портфолио ученых ПНИПУ</a>
+	</div>
 
 	<div class = 'drop' id = 'NIpart' hidden='true'>
 		<a href = ''>Научные центры и лаборатории</a>
@@ -30,11 +40,19 @@
 		<a href = ''>Уникальные научные установки (УНУ)</a>
 	</div>
 
+	<div class = 'drop' id = 'NIinnovation' hidden='true'>
+		<a href = ''>Центр трансфера технологий</a>
+		<a href = ''>Студенческий бизнес-инкубатор</a>
+		<a href = ''>Технопарк</a>
+	</div>
+
+
 	<div class = 'drop' id = 'society' hidden='true'>
-		<a href = ''>Инновационный кластер студенческих проектных групп</a>
-		<a href = ''>Предпринимательская среда</a>
+		<a href = ''>Акселератор "Большая разведка"</a>
+		<a href = ''>Клуб "Предпринимательская среда"</a>
 		<a href = ''>Студенческий совет</a>
-		<a href = ''>Совет молодых ученых и специалистов ПНИПУ</a>
+		<a href = ''>Совет молодых ученых и специалистов</a>
+		<a href = ''>Формула Студент</a>
 	</div>
 
 	<div class = 'drop' id = 'NIunits' hidden='true'>
@@ -45,19 +63,21 @@
 	</div>
 
 	<div id = 'panel'>
-		<a href = "../rectorat/index.html"
-		 class = 'panelButton'>Проректор по науке и инновациям</a>
+		<a href = "http://pstu.ru/manage/rectorat/?cid=105"
+		 class = 'panelButton' target="_blank">Проректор по науке и инновациям</a>
 		<a href = "http://pstu.ru/activity/innovation/sovet/"
 		 class = 'panelButton' target="_blank">Совет по науке и инновациям</a>
 		<div class = 'panelButton' onclick='openDrop("NIcontrol", this)'>Управление науки и инновации<img src = "../Arrow.png"/></div>
-		<div class = 'panelButton' onclick='openDrop("NIpart", this)'>Научно-исследовательская часть<img src = "../Arrow.png"/></div>
+		<div class = 'panelButton' onclick='openDrop("NIscience", this)'>Наука и разработки<img src = "../Arrow.png"/></div>
+		<div class = 'panelButton' onclick='openDrop("NIpart", this)'>Объекты научной инфраструктуры<img src = "../Arrow.png"/></div>
+		<div class = 'panelButton' onclick='openDrop("NIinnovation", this)'>Объекты инновационной инфраструктуры<img src = "../Arrow.png"/></div>
 		<div class = 'panelButton' onclick='openDrop("society", this)'>Общественные площадки<img src = "../Arrow.png"/></div>
-		<a href = "http://pstu.ru/title1/departments/manage_department/aspirant/"
-		 class = 'panelButton' target="_blank">Управление подготовки кадров высшей квалификации</a>
 		<div class = 'panelButton' onclick='openDrop("NIunits", this)'>Научные образовательные подразделения
 		<img src = "../Arrow.png"/></div>
-		 <a href = "http://pstu.ru/activity/innovation/comps/"
-		 class = 'panelButton' target="_blank">Малые инновационные предприятия</a>
+		<a href = "http://pstu.ru/title1/departments/manage_department/aspirant/"
+		 class = 'panelButton' target="_blank">Управление подготовки кадров высшей квалификации</a>
+		 <a href = "http://pstu.ru/title1/departments/manage_department/international/"
+		 class = 'panelButton' target="_blank">Управление международных связей</a>
 		<div id = 'panelEnd'/>
 		</div>
 	</div>
@@ -66,6 +86,7 @@
 
 
 	<div id = "mainInfo">
+		<div id ="centerInfo">
 		<h1>Наука и инновации в пермском Политехе</h1><br/>
 		<div id = "slideShow">
 			<img src = "Labs/Lab1.jpg" id = "imageLabs"/>
@@ -79,7 +100,6 @@
 		</div>
 		<p id = "nameLab"><i></i></p>
 		<br/>
-		<h1>Статистика</h1><br/>
 		<div id = "statistika" class = "image">
 			<div class = "stats">
 					<img src = "Statistika/Meropriyatiye.png"/>
@@ -155,89 +175,7 @@
 	<br/>
 	<img src = "sponsors.png" class = "image"/>
 	</div>
-	<script type="text/javascript">
-		function animate(draw, end, duration) {
-			  var start = performance.now();
-			  requestAnimationFrame(function animate(time) {
-			    var timePassed = time - start;
-			    if(timePassed < 0)timePassed=0;
-			    if (timePassed > duration){
-			    	end(); }
-			    else{
-			    	draw(timePassed/duration);
-			 		requestAnimationFrame(animate);
-				}
-			  });
-			}
-		var nowLab = 1;
-		const maxLab = 5;
-		var sli = false;
-		const labNames = ['',
-							'',
-							'',
-							'',
-							''];
-
-
-
-		function sets(timeFraction){
-			//return Math.sin(timeFraction*Math.PI/2);
-			return (1-Math.cos(timeFraction*Math.PI))/2;
-		}
-		var timerId = setTimeout(change, 5000);
-		function change(inRight){
-			 if (inRight === undefined) {
-    			inRight = true;
-  			}
-			clearTimeout(timerId);
-			if(!sli){
-			sli = true;
-			var base = document.getElementById("imageLabs");
-			var baseTwo = document.getElementById("imageLabsTwo");
-			var gradient = document.getElementById((inRight?("gradientR"):("gradientL")));
-			var label = document.getElementById("nameLab");
-			gradient.hidden = false;
-			if(inRight){
-				nowLab++;
-				if(nowLab>maxLab)nowLab=1;
-			}else{
-				nowLab--;
-				if(nowLab<1)nowLab=maxLab;
-			}
-			baseTwo.src = "Labs/Lab"+nowLab+".jpg";
-			baseTwo.parentElement.hidden = false;
-			let a = false;
-			animate(function(time){
-				time = sets(time);
-				if(time < 0.5)
-					label.style.opacity = 1-time*2;
-				else
-					label.style.opacity = time*2-1;
-				if(time > 0.5 && !a){
-					a = true;
-					label.innerHTML = labNames[nowLab-1];
-				}
-				if(inRight){
-					baseTwo.style.left = -100+time*100+"%";
-					baseTwo.parentElement.style.left = 100-time*100+"%";
-					gradient.style.left = 90-time*100+"%";
-				}else{
-					baseTwo.style.left = 100-time*100+"%";
-					baseTwo.parentElement.style.left = -100+time*100+"%";
-					gradient.style.left = -10+time*100+"%";
-				}
-				gradient.style.opacity = (time < 0.8)? ((time < 0.2)?(time*5):1) : (1-(time-0.8)*5);
-			}, function(){
-				gradient.hidden = true;
-				baseTwo.parentElement.hidden = true;
-				base.src = "Labs/Lab"+nowLab+".jpg";
-				sli = false;
-				timerId = setTimeout(change, 5000);
-			}, 1500);
-			}
-		}
-
-
-	</script>
+</div>
+	<script  type="text/javascript" src="slideShow.js"></script>
 </body>
 </html>
